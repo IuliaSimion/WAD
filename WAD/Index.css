@@ -1,0 +1,146 @@
+
+.top{
+    background-image: url('http://hdfreewallpaper.net/wp-content/uploads/2016/07/Beautiful-makeup-wallpapers.jpg');
+    background-position: center;
+    height: 20vh;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.body-menu{
+    height: 80vh;
+    background-color: blanchedalmond;
+}
+
+.mainbar{
+    background-color: blanchedalmond;
+    color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.whole-body{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.accordion>.panel-heading{
+    background-color: blanchedalmond;
+    border-color: blanchedalmond;
+}
+
+.accordion{
+    margin-top: 10px;
+    border-color: blanchedalmond;
+}
+
+.search{
+    border-radius: 25px;
+}
+
+.login{
+    color:hotpink;
+}
+
+.login-text{
+    color:hotpink;
+    font-weight: bold;
+}
+
+.cart{
+    color:hotpink;
+}
+
+.cart-text{
+    color:hotpink;
+    font-weight: bold;
+}
+
+.menuless-body{
+    background-color: blanchedalmond;
+    height: 80vh;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.info{
+    position: center;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.login-register{
+    background-color: blanchedalmond;
+    height: 100vh;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.productbox {
+    background-color:#ffffff;
+	padding:10px;
+	margin-bottom:10px;
+	-webkit-box-shadow: 0 8px 6px -6px  #999;
+	   -moz-box-shadow: 0 8px 6px -6px  #999;
+	        box-shadow: 0 8px 6px -6px #999;
+
+}
+.productbox:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.producttitle {
+    font-weight:bold;
+	padding:5px 0 5px 0;
+}
+
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.badge{
+    background-color: deeppink;
+}
+
+.cart-table>tr, td{
+    border-bottom: 1px solid hotpink;
+}
+
+.cart-header{
+    border: 1px solid deeppink;
+    background-color: hotpink;
+}
+
+.cart-table{
+    border-bottom: 4px solid deeppink;
+}
+
+.checkout{
+    background-color: deeppink;
+    border-color: deeppink;
+}
+
+.checkout:hover{
+    background-color: hotpink;
+    border-color: deeppink;
+}
+
+.continue-shopping{
+    margin-bottom: 5px;
+    margin-top: 4px;
+    background-color: deeppink;
+    border-color: deeppink;  
+}
+
+.continue-shopping:hover{
+    background-color: hotpink;
+    border-color: deeppink;
+}
