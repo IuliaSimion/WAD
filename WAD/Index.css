@@ -8,7 +8,7 @@
 }
 
 .body-menu{
-    height: 80vh;
+    height: 90vh;
     background-color: blanchedalmond;
 }
 
@@ -104,6 +104,10 @@
 .pricetext {
 	font-weight:bold;
 	font-size:1.2em;
+}
+
+.old-price{
+    font-size: 1em;
 }
 
 .badge{
