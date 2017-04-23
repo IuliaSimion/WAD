@@ -1,4 +1,3 @@
-c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\ApplicationInsights.config
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\roslyn\csc.exe
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\roslyn\csc.exe.config
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\roslyn\csc.rsp
@@ -78,3 +77,4 @@ c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCos
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Swashbuckle.Core.dll
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\WebActivatorEx.dll
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\MagazinCosmetice.xml
+C:\Users\Iulia\Documents\Visual Studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Views\ApplicationInsights.config

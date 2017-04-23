@@ -54,6 +54,44 @@ namespace MagazinCosmetice.Controllers
             return db.Products.Where(t => t.Brand == brand);
         }
 
+        // GET: api/Products/Sale
+        [HttpGet]
+        [Route("api/Products/Sale")]
+        public List<Product> GetProductsOnSale()
+        {
+            List<Product> prodList = db.Products.ToList();
+            List<Product> prodOnSale = new List<Product>();
+
+            foreach(var p in prodList)
+            {
+                if (p.SaleId.HasValue)
+                {
+                    p.NewPrice = p.Price - p.Sale.Discount / 100 * p.Price;
+
+                    prodOnSale.Add(p);
+                }
+
+            }
+            return prodOnSale;
+        }
+
+        // GET: api/Products/Categories
+        [HttpGet]
+        [Route("api/Products/Categories")]
+        public IQueryable<string> GetCategories()
+        {
+            return db.Products.Select(t => t.Category).Distinct();
+        }
+
+
+        // GET: api/Products/Brands
+        [HttpGet]
+        [Route("api/Products/Brands")]
+        public IQueryable<string> GetBrands()
+        {
+            return db.Products.Select(t => t.Brand).Distinct();
+        }
+
         // PUT: api/Products/5
         [HttpPut]
         [ResponseType(typeof(void))]
