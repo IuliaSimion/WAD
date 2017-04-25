@@ -39,7 +39,7 @@ namespace MagazinCosmetice.Controllers
 
         // GET: api/Users/{email}
         [HttpGet]
-        [Route("api/Users/{email}")]
+        [Route("api/Users/Email/{email}")]
         [ResponseType(typeof(User))]
         public IQueryable<User> GetUserByEmail(string email)
         {

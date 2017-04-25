@@ -74,16 +74,12 @@ namespace MagazinCosmetice.Controllers
 
             foreach (var p in retVal)
             {
-                if (p.SaleId.HasValue)
-                {
-                    p.NewPrice = p.Price - p.Sale.Discount / 100 * p.Price;
+                p.NewPrice = p.Price - ((decimal)p.Sale.Discount / 100 * p.Price);
 
-                    db.SaveChanges();
-
-                    //prodOnSale.Add(p);
-                }
+                db.SaveChanges();
 
             }
+            
             return retVal;
         }
 

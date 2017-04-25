@@ -15,9 +15,9 @@ function HtmlCategories(data) {
     var htmlString1 = "";
     var htmlString2 = "";
     for(i = 0; i < data.length; i++){
-    htmlString2 += "<li class=\"list-group-item\">" + data[i] + "</li>";
+    htmlString2 += '<li class="list-group-item">' + data[i] + '</li>';
     }  
-    htmlString1 += "<ul class=\"list-group\">" + htmlString2 + "</ul>";
+    htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
     accordionCategories.insertAdjacentHTML('beforeend', htmlString1);
 }
 
