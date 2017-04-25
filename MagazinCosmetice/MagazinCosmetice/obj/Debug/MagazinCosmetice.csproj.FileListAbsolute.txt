@@ -71,10 +71,10 @@ c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCos
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Microsoft.AI.ServerTelemetryChannel.xml
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Microsoft.AI.WindowsServer.xml
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Microsoft.AI.Web.xml
-c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\obj\Debug\MagazinCosmetice.csprojResolveAssemblyReference.cache
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\obj\Debug\MagazinCosmetice.dll
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\obj\Debug\MagazinCosmetice.pdb
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Swashbuckle.Core.dll
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\WebActivatorEx.dll
 c:\users\iulia\documents\visual studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\MagazinCosmetice.xml
 C:\Users\Iulia\Documents\Visual Studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\bin\Views\ApplicationInsights.config
+C:\Users\Iulia\Documents\Visual Studio 2017\Projects\MagazinCosmetice\MagazinCosmetice\obj\Debug\MagazinCosmetice.csprojResolveAssemblyReference.cache

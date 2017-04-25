@@ -18,6 +18,7 @@ namespace MagazinCosmetice.Controllers
 
         // GET: api/Products
         [HttpGet]
+        //[Route("api/Products")]        
         public IQueryable<Product> GetProducts()
         {
             return db.Products;
@@ -25,6 +26,7 @@ namespace MagazinCosmetice.Controllers
 
         // GET: api/Products/5
         [HttpGet]
+        //[Route("api/Products/{id}")]
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
@@ -57,22 +59,32 @@ namespace MagazinCosmetice.Controllers
         // GET: api/Products/Sale
         [HttpGet]
         [Route("api/Products/Sale")]
-        public List<Product> GetProductsOnSale()
+        public IQueryable<Product> GetProductsOnSale()
         {
-            List<Product> prodList = db.Products.ToList();
-            List<Product> prodOnSale = new List<Product>();
+            //IQueryable<Product> prodList = db.Products.Where(p => p.SaleId.HasValue);
+            return db.Products.Where(p => p.SaleId.HasValue);
 
-            foreach(var p in prodList)
+           
+        }
+        [HttpPut]
+        [Route("api/Products/UpdatePromotionPrices")]
+        public IEnumerable<Product> UpdatePromotionPrices()
+        {
+            IEnumerable<Product> retVal = db.Products.Where(p => p.SaleId.HasValue).ToList();
+
+            foreach (var p in retVal)
             {
                 if (p.SaleId.HasValue)
                 {
                     p.NewPrice = p.Price - p.Sale.Discount / 100 * p.Price;
 
-                    prodOnSale.Add(p);
+                    db.SaveChanges();
+
+                    //prodOnSale.Add(p);
                 }
 
             }
-            return prodOnSale;
+            return retVal;
         }
 
         // GET: api/Products/Categories

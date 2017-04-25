@@ -19,10 +19,10 @@ namespace MagazinCosmetice.Models
         {
             this.Products = new HashSet<Product>();
         }
-    
+
         public int SaleId { get; set; }
         public int Discount { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
     }
