@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="OrderId" />
     </Key>
-    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="ProductList" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
@@ -13,27 +13,28 @@
     <Key>
       <PropertyRef Name="ProductId" />
     </Key>
-    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="SaleId" Type="int" />
-    <Property Name="NewPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="NewPrice" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="Sale">
     <Key>
       <PropertyRef Name="SaleId" />
     </Key>
-    <Property Name="SaleId" Type="int" Nullable="false" />
+    <Property Name="SaleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Discount" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />

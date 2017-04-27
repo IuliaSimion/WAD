@@ -4,45 +4,46 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="MagazinCosmeticeModel.Order">
         <MappingFragment StoreEntitySet="Order">
-          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="ProductList" ColumnName="ProductList" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ProductList" ColumnName="ProductList" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="MagazinCosmeticeModel.Product">
         <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Category" ColumnName="Category" />
-          <ScalarProperty Name="Brand" ColumnName="Brand" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
           <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sales">
       <EntityTypeMapping TypeName="MagazinCosmeticeModel.Sale">
         <MappingFragment StoreEntitySet="Sale">
-          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
           <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="MagazinCosmeticeModel.User">
         <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
