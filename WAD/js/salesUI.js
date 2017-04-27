@@ -27,7 +27,7 @@ function loadSales()
 
                 
             }
-            productBox.append(htmlString);
+            productBox.prepend(htmlString);
         }
     );
 }

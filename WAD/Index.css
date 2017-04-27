@@ -96,6 +96,10 @@
 	padding:5px 0 5px 0;
 }
 
+.producttitle>a {
+        color: hotpink;
+}
+
 .productprice {
 	border-top:1px solid #dadada;
 	padding-top:5px;

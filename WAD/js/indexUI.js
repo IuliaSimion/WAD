@@ -11,7 +11,7 @@ function loadCategories()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item">' + data[i] + '</li>';
+                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseCategories.append(htmlString1);
@@ -33,7 +33,7 @@ function loadBrands()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item">' + data[i] + '</li>';
+                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseBrands.append(htmlString1);
@@ -92,7 +92,7 @@ function loadProducts()
 
                 
             }
-            productBox.append(htmlString);
+            productBox.prepend(htmlString);
         }
     );
 }
