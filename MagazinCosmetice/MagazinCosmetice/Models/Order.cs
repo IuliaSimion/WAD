@@ -20,5 +20,6 @@ namespace MagazinCosmetice.Models
         public System.DateTime Date { get; set; }
     
         public virtual User User { get; set; }
+        
     }
 }
