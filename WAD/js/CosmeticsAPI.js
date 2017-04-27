@@ -76,6 +76,12 @@ function CosmeticsAPI() {
         var allProductsReq = "/api/products";
         return doAsyncGet(allProductsReq);
     };
+
+    this.getAllCategories = function () {
+        var apiURL = "/api/products/categories";
+        return doAsyncGet(apiURL);
+    };  
+
     this.getAllBrands = function () {
         var apiURL = "/api/products/brands";
         return doAsyncGet(apiURL);
