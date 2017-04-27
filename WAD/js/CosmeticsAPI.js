@@ -73,8 +73,8 @@ function CosmeticsAPI() {
     };
 
     this.getAllProducts = function () {
-        var allProductsReq = "/api/products";
-        return doAsyncGet(allProductsReq);
+        var apiURL = "/api/products";
+        return doAsyncGet(apiURL);
     };
 
     this.getAllCategories = function () {
@@ -87,30 +87,42 @@ function CosmeticsAPI() {
         return doAsyncGet(apiURL);
     };    
 
-    this.getStudentsInGroup = function (groupId) {
-        var apiURL = "/api/groups/" + groupId + "/students";
+    this.getProductById = function (id) {
+        var apiURL = "/api/products/" + id;
         return doAsyncGet(apiURL);
     };
 
-    this.getGradesForStudent = function (studentId) {
-        var apiURL = "/api/students/" + studentId + "/grades";
+    this.getProductsOnSale = function () {
+        var allProductsReq = "/api/products/sale";
+        return doAsyncGet(allProductsReq);
+    };
+
+    this.getProductsByCategory = function (category) {
+        var apiURL = "/api/products/category/" + category;
         return doAsyncGet(apiURL);
     };
-   
-    this.addNewStudent = function (student) {
-        var postURL = "/api/students";
-        return doAsyncPost(postURL, student);
+    
+    this.getProductsByBrand = function (brand) {
+        var apiURL = "/api/products/brand/" + brand;
+        return doAsyncGet(apiURL);
     };
-    this.deleteStudent = function (studentId)
+
+   
+    this.addNewProduct = function (product) {
+        var postURL = "/api/products";
+        return doAsyncPost(postURL, product);
+    };
+
+    this.deleteProduct = function (productId)
     {
-        var postURL = "/api/students/" + studentId;
-        return doAsyncDelete(postURL);
+        var deleteURL = "/api/products/" + productId;
+        return doAsyncDelete(deleteURL);
     }
 
-    this.updateStudent = function (studentData)
+    this.updateProduct = function (productData)
     {
-        var putUrl = "/api/students/"+studentData.id;
-        return doAsyncPut(putUrl, studentData);
+        var putUrl = "/api/products/"+productData.id;
+        return doAsyncPut(putUrl, productData);
     }
 
    
