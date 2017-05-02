@@ -11,7 +11,7 @@ function loadCategories()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item"><button style="color: hotpink;" id="categ-link" onClick="loadProductsByCategory()">' + data[i] + '</button></li>';
+                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#" onClick="loadProductsByCategory()">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseCategories.append(htmlString1);
@@ -22,9 +22,11 @@ function loadCategories()
 }
 
 function loadProductsByCategory(){
+    $("#prod-box").empty();
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
-    var category = $(this).text();
+    //var category = $(this).text();
+    var category = "Eyes";
     cosmeticsAPI.getProductsByCategory(category).done(
         function (data) {
             
@@ -39,7 +41,7 @@ function loadProductsByCategory(){
                             htmlString += '<div class="col-md-2 column productbox">' +
                                             '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
                                             '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
-                                            '<div class="productprice"><div class="pull-left"><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
@@ -55,7 +57,7 @@ function loadProductsByCategory(){
                             htmlString += '<div class="col-md-2 column productbox">' +
                                             '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
                                             '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
-                                            '<div class="productprice"><div class="pull-left"><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
@@ -90,7 +92,7 @@ function loadBrands()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#">' + data[i] + '</a></li>';
+                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#" onClick="loadProductsByBrand()">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseBrands.append(htmlString1);
@@ -100,6 +102,64 @@ function loadBrands()
     );
 
 }
+
+function loadProductsByBrand(){
+    $("#prod-box").empty();
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+    //var brand = $(this).text();
+    var brand = "Sephora";
+    cosmeticsAPI.getProductsByBrand(brand).done(
+        function (data) {
+            
+                var productBox = $("#prod-box");
+                var htmlString = "";
+                for(i = 0; i < data.length; i++){
+
+                    if(data[i].Image == null){
+
+                        if(data[i].SaleId == null){
+
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                        else{
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                    }
+                    else{
+                        if(data[i].SaleId == null){
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                        else{
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                    }
+
+                
+                }
+                productBox.prepend(htmlString);
+            }
+
+            
+    );
+}
+
 
 function loadProducts()
 {
@@ -119,7 +179,7 @@ function loadProducts()
                         htmlString += '<div class="col-md-2 column productbox">' +
                                             '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
                                             '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
-                                            '<div class="productprice"><div class="pull-left"><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                     }
                     else{
@@ -135,7 +195,7 @@ function loadProducts()
                         htmlString += '<div class="col-md-2 column productbox">' +
                                             '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
                                             '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
-                                            '<div class="productprice"><div class="pull-left"><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                     }
                     else{
@@ -155,3 +215,60 @@ function loadProducts()
 }
 
 
+function Search(){
+    $("#prod-box").empty();
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+    //var searchParam = $("#search-box").text();
+    var searchParam = "lip";
+    cosmeticsAPI.SearchProduct(searchParam).done(
+        function (data) {
+            
+                var productBox = $("#prod-box");
+                var htmlString = "";
+                for(i = 0; i < data.length; i++){
+
+                    if(data[i].Image == null){
+
+                        if(data[i].SaleId == null){
+
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                        else{
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                    }
+                    else{
+                        if(data[i].SaleId == null){
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                        else{
+                            htmlString += '<div class="col-md-2 column productbox">' +
+                                            '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
+                                    '</div>'
+                        }
+                    }
+
+                
+                }
+                productBox.prepend(htmlString);
+            }
+
+            
+    );
+
+}

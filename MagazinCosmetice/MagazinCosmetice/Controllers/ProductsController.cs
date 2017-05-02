@@ -56,6 +56,16 @@ namespace MagazinCosmetice.Controllers
             return db.Products.Where(t => t.Brand == brand);
         }
 
+        // GET: api/Products/Brand/string
+        [HttpGet]
+        [Route("api/Products/Search/{name}")]
+        public IQueryable<Product> SearchByName(string name)
+        {
+            string searchParam = name.ToLower();
+            return db.Products.Where(t => t.Name.ToLower().Contains(searchParam));
+            
+        }
+
         // GET: api/Products/Sale
         [HttpGet]
         [Route("api/Products/Sale")]

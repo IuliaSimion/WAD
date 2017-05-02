@@ -107,6 +107,10 @@ function CosmeticsAPI() {
         return doAsyncGet(apiURL);
     };
 
+    this.SearchProduct = function (search) {
+        var apiURL = "/api/products/search/" + search;
+        return doAsyncGet(apiURL);
+    };
    
     this.addNewProduct = function (product) {
         var postURL = "/api/products";
