@@ -5,7 +5,7 @@ function loadSales()
 
     cosmeticsAPI.getProductsOnSale().done(
         function (data){
-            var productBox = $("#prod-box-sales");
+            var productBox = $("#prod-box");
             var htmlString = "";
             for(i = 0; i < data.length; i++){
 
