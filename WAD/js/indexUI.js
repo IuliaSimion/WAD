@@ -57,7 +57,7 @@ function loadCategories()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#" onClick="loadProductsByCategory()">' + data[i] + '</a></li>';
+                    htmlString2 += '<li class="list-group-item"><a id="categ-link-'+ data[i] +'" style="color: hotpink;" href="#" onClick="loadProductsByCategory(\''+ data[i] +'\')">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseCategories.append(htmlString1);
@@ -67,12 +67,12 @@ function loadCategories()
     );
 }
 
-function loadProductsByCategory(){
+function loadProductsByCategory(category){
     $("#prod-box").empty();
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
-    //var category = $(this).text();
-    var category = "Eyes";
+    //var category = $('#categ-link' + this.id).text();
+    //var category = "Eyes";
     cosmeticsAPI.getProductsByCategory(category).done(
         function (data) {
             
@@ -265,8 +265,8 @@ function Search(){
     $("#prod-box").empty();
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
-    //var searchParam = $("#search-box").text();
-    var searchParam = "lip";
+    var searchParam = $("#search-box").val();
+    //var searchParam = "lip";
     cosmeticsAPI.SearchProduct(searchParam).done(
         function (data) {
             
