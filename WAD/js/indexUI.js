@@ -57,7 +57,7 @@ function loadCategories()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item"><a id="categ-link-'+ data[i] +'" style="color: hotpink;" href="#" onClick="loadProductsByCategory(\''+ data[i] +'\')">' + data[i] + '</a></li>';
+                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#" onClick="loadProductsByCategory(\''+ data[i] +'\')">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseCategories.append(htmlString1);
@@ -138,7 +138,7 @@ function loadBrands()
                 var htmlString1 = "";
                 var htmlString2 = "";
                 for(i = 0; i < data.length; i++){
-                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#" onClick="loadProductsByBrand()">' + data[i] + '</a></li>';
+                    htmlString2 += '<li class="list-group-item"><a style="color: hotpink;" href="#" onClick="loadProductsByBrand(\''+ data[i] +'\')">' + data[i] + '</a></li>';
                 }
                 htmlString1 += '<ul class="list-group">' + htmlString2 + '</ul>';
                 collapseBrands.append(htmlString1);
@@ -149,12 +149,12 @@ function loadBrands()
 
 }
 
-function loadProductsByBrand(){
+function loadProductsByBrand(brand){
     $("#prod-box").empty();
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
     //var brand = $(this).text();
-    var brand = "Sephora";
+    //var brand = "Sephora";
     cosmeticsAPI.getProductsByBrand(brand).done(
         function (data) {
             
