@@ -9,15 +9,15 @@
                     if(data[i].SaleId == null){
 
                         htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<a class="img" ><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a >' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                     }
                     else{
                         htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<a class="img" ><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a >' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                     }
@@ -25,15 +25,15 @@
                 else{
                     if(data[i].SaleId == null){
                         htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<a class="img" ><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a >' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                     }
                     else{
                         htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html">' + data[i].Name + '</a></div>' +
+                                            '<a class="img" ><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a >' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                     }
@@ -43,7 +43,7 @@
             }
             productBox.prepend(htmlString);
 }*/
-var ProductHolder = "";
+var ProductHolder = 1;
 //alert('value: ' + ProductHolder);
 
 
@@ -87,15 +87,15 @@ function loadProductsByCategory(category){
                         if(data[i].SaleId == null){
 
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                         }
@@ -103,15 +103,15 @@ function loadProductsByCategory(category){
                     else{
                         if(data[i].SaleId == null){
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                         }
@@ -169,15 +169,15 @@ function loadProductsByBrand(brand){
                         if(data[i].SaleId == null){
 
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                         }
@@ -185,15 +185,15 @@ function loadProductsByBrand(brand){
                     else{
                         if(data[i].SaleId == null){
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                         }
@@ -281,15 +281,15 @@ function Search(){
                         if(data[i].SaleId == null){
 
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src="http://cdn.hercampus.com/s3fs-public/2015/01/04/Benefit-full-finish-lipstick-review-swatches-photos-spring-2011-closeup.jpg" class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                         }
@@ -297,15 +297,15 @@ function Search(){
                     else{
                         if(data[i].SaleId == null){
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="visibility: hidden">""</div><div class="pricetext">' + data[i].Price + ' RON</div></div></div>' +
                                     '</div>'
                         }
                         else{
                             htmlString += '<div class="col-md-2 column productbox">' +
-                                            '<a class="img" href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
-                                            '<div class="producttitle"><a href="Product.html" onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
+                                            '<a class="img"  onClick="loadProductDetails(' + data[i].ProductId + ')"><img src=' + data[i].Image + 'class="img-responsive"></a>' +
+                                            '<div class="producttitle"><a  onClick="loadProductDetails(' + data[i].ProductId + ')">' + data[i].Name + '</a></div>' +
                                             '<div class="productprice"><div class="pull-left"><div class="pricetext old-price" style="text-decoration: line-through; color:red">' + data[i].Price + ' RON</div><div class="pricetext">' + data[i].NewPrice + ' RON</div></div></div>' +
                                     '</div>'
                         }
@@ -323,10 +323,10 @@ function Search(){
 
 
 
-function SaveProductId(data){
-    ProductHolder += data;
+/*function SaveProductId(data){
+    ProductHolder = data;
 
-}
+}*/
 
 
 function loadProductDetails(prodId){
@@ -348,9 +348,9 @@ function loadProductDetails(prodId){
 
                                     '<div class="col-sm-5">' +
                                         '<h2>' + data.Name + '</h2>' +
-                                        '<h5>Category: ' + data.Category + '</h4>' +
-                                        '<h5>Brand: ' + data.Brand + '</h4>' +
-                                        '<h5>Description: ' + data.Description + '</h4>' +
+                                        '<h4>Category: ' + data.Category + '</h4>' +
+                                        '<h4>Brand: ' + data.Brand + '</h4>' +
+                                        '<h5>Description: ' + data.Description + '</h5>' +
                                         '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.Price + ' RON</div></div>' +
 
                                     '</div>' +
@@ -365,9 +365,9 @@ function loadProductDetails(prodId){
 
                                     '<div class="col-sm-5">' +
                                         '<h2>' + data.Name + '</h2>' +
-                                        '<h5>Category: ' + data.Category + '</h4>' +
-                                        '<h5>Brand: ' + data.Brand + '</h4>' +
-                                        '<h5>Description: ' + data.Description + '</h4>' +
+                                        '<h4>Category: ' + data.Category + '</h4>' +
+                                        '<h4>Brand: ' + data.Brand + '</h4>' +
+                                        '<h5>Description: ' + data.Description + '</h5>' +
                                         '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.NewPrice + ' RON</div></div>' +
 
                                     '</div>' +
@@ -386,7 +386,7 @@ function loadProductDetails(prodId){
                                             '<h2>' + data.Name + '</h2>' +
                                             '<h4>Category: ' + data.Category + '</h4>' +
                                             '<h4>Brand: ' + data.Brand + '</h4>' +
-                                            '<h5>Description: ' + data.Description + '</h4>' +
+                                            '<h5>Description: ' + data.Description + '</h5>' +
                                             '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.Price + ' RON</div></div>' +
 
                                         '</div>' +
@@ -401,9 +401,9 @@ function loadProductDetails(prodId){
 
                                     '<div class="col-sm-5">' +
                                         '<h2>' + data.Name + '</h2>' +
-                                        '<h5>Category: ' + data.Category + '</h4>' +
-                                        '<h5>Brand: ' + data.Brand + '</h4>' +
-                                        '<h5>Description: ' + data.Description + '</h4>' +
+                                        '<h4>Category: ' + data.Category + '</h4>' +
+                                        '<h4>Brand: ' + data.Brand + '</h4>' +
+                                        '<h5>Description: ' + data.Description + '</h5>' +
                                         '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.NewPrice + ' RON</div></div>' +
 
                                     '</div>' +
@@ -411,7 +411,7 @@ function loadProductDetails(prodId){
                                 '</div>'
                 }
             }
-                location.href = "Product.html"
+                //location.href = "Product.html"
                 productDetails.prepend(htmlString);
                 
         } 
