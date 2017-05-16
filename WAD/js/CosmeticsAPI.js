@@ -134,6 +134,9 @@ function CosmeticsAPI() {
         return doAsyncGet(apiURL);
     }
 
-   
+   this.addNewUser = function (user) {
+        var postURL = "/api/users";
+        return doAsyncPost(postURL, user);
+    };
     CosmeticsAPI.instance = this;
 }

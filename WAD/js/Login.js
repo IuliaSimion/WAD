@@ -26,3 +26,22 @@ function VerifyUser(){
     window.location.replace("Index.html");
     
 }
+
+
+function Register(){
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+    var user = {
+        Name : $("#name").val() ,
+        Email : $("#email-address").val() , 
+        Password : $("#confirm-password").val() , 
+        PhoneNumber : $("#number").val() ,
+        Address : $("#address").val() , 
+        Role : "user"
+    };
+
+    cosmeticsAPI.addNewUser(user);
+
+    window.location.replace("Index.html");
+
+}
