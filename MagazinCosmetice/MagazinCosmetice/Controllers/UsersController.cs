@@ -37,7 +37,7 @@ namespace MagazinCosmetice.Controllers
             return Ok(user);
         }
 
-        // GET: api/Users/{email}
+        // GET: api/Users/Email/{email}
         [HttpGet]
         [Route("api/Users/Email/{email}")]
         [ResponseType(typeof(User))]

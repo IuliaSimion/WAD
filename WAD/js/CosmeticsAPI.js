@@ -129,6 +129,11 @@ function CosmeticsAPI() {
         return doAsyncPut(putUrl, productData);
     }
 
+    this.getUserByEmail = function (email) {
+        var apiURL = "api/users/email/" + email + "/";
+        return doAsyncGet(apiURL);
+    }
+
    
     CosmeticsAPI.instance = this;
 }

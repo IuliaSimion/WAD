@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="Index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/libs/jquery/dist/jquery.js"></script>
+    <script src="js/libs/jquery-cookie/jquery.cookie.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/CosmeticsAPI.js"></script>
+    <script src="js/indexUI.js"></script>
+    <script src="js/Login.js"></script>
 </head>
 <body>
 
@@ -24,10 +28,10 @@
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password">
                 </div>
-                <div class="checkbox">
+                <!--<div class="checkbox">
                     <label><input type="checkbox"> Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-default">Log In</button>
+                </div>-->
+                <button type="submit" class="btn btn-default" onclick="VerifyUser()">Log In</button>
             </form>
         </div>
 
@@ -40,15 +44,15 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    <input type="email" class="form-control" id="email-address" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Confirm Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Enter password">
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
