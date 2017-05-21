@@ -45,6 +45,21 @@
 }*/
 //var ProductHolder = 1;
 //alert('value: ' + ProductHolder);
+function HideButtons(){
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+
+    var userId = localStorage.getItem("User");
+    cosmeticsAPI.getUserById(userId).done(
+        function (data){
+            if(data.Role == "user"){
+                    $("#add-btn").hide();
+                    $("#edit-delete-buttons").hide();
+            }
+        }
+
+    );
+}
 
 
 function loadCategories()
@@ -74,7 +89,7 @@ function loadProductsByCategory(category){
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
     //var category = $('#categ-link' + this.id).text();
-    //var category = "Eyes";
+    HideButtons();
     cosmeticsAPI.getProductsByCategory(category).done(
         function (data) {
             
@@ -156,7 +171,7 @@ function loadProductsByBrand(brand){
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
     //var brand = $(this).text();
-    //var brand = "Sephora";
+    HideButtons();
     cosmeticsAPI.getProductsByBrand(brand).done(
         function (data) {
             
@@ -213,6 +228,7 @@ function loadProducts()
 {
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
+    HideButtons();
 
     cosmeticsAPI.getAllProducts().done(
         function (data){
@@ -325,8 +341,9 @@ function Search(){
 
 function SaveProductId(data){
     //$.cookie("ProductId", '1');
-    document.cookie = data;
+    //document.cookie = data;
     //alert($.cookie("ProductId").val());
+    localStorage.setItem("ProductId", data);
 
 }
 
@@ -335,7 +352,8 @@ function loadProductDetails(){
     $("#prod-box").empty();
     //var prodId = $.cookie("ProductId").val();
     //var prodId = document.cookie;
-    var prodId = 1;
+    HideButtons();
+    var prodId = localStorage.getItem("ProductId");
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
 
@@ -352,7 +370,7 @@ function loadProductDetails(){
                                     '</div>' +
 
                                     '<div class="col-sm-5">' +
-                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                         '<h2>' + data.Name + '</h2>' +
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -370,7 +388,7 @@ function loadProductDetails(){
                                     '</div>' +
 
                                     '<div class="col-sm-5">' +
-                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                         '<h2>' + data.Name + '</h2>' +
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -390,7 +408,7 @@ function loadProductDetails(){
                                         '</div>' +
 
                                         '<div class="col-sm-5">' +
-                                            '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                            '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                             '<h2>' + data.Name + '</h2>' +
                                             '<h4>Category: ' + data.Category + '</h4>' +
                                             '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -408,7 +426,7 @@ function loadProductDetails(){
                                     '</div>' +
 
                                     '<div class="col-sm-5">' +
-                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                         '<h2>' + data.Name + '</h2>' +
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -445,9 +463,7 @@ function AddProduct(){
     }
 
     cosmeticsAPI.addNewProduct(product).done(
-        alert("Product added!")
-    ).fail(
-        alert("Failed to add!")
+    window.location.href = "Index.html"
     );
 }
 
@@ -455,11 +471,11 @@ function DeleteProduct(){
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
 
-    var prodId = $.cookie("ProductId").val();
+    //var prodId = $.cookie("ProductId").val();
+    var prodId = localStorage.getItem("ProductId");
 
     cosmeticsAPI.deleteProduct(prodId).done(
-        alert("Product deleted!")
-    ).fail(
-        alert("Failed to delete!")
+
+    window.location.href = "Index.html"
     );
 }

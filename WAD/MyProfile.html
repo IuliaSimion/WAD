@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="Index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/libs/jquery/dist/jquery.js"></script>
+    <script src="js/libs/jquery-cookie/jquery.cookie.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/CosmeticsAPI.js"></script>
+    <script src="js/indexUI.js"></script>
+    <script src="js/MyProfile.js"></script>
   </head>
   <body>
   <div class="container-fluid">
@@ -42,18 +46,18 @@
 
 <div class="container-fluid menuless-body">
   <div class="row">
-    <div class="col-sm-12 info">
-        <h2>Contact us!</h2>
-
-      <h4>Address:</h4><p>Strada Tineretului nr.13, Bloc A1, Parter</p>
-      <h4>Email:</h4><p>echipa@organik.ro</p>
-      <h4>Phone number</h4><p>0351273645</p>
-      <h4>Program:</h4><p>Monday-Friday: 09:00-17:00</p>
+    <div class="col-sm-12" id="user-info">
+        
     </div>
   </div>
 </div>
   
+<script>
+$(document).ready(function() {
+UserInfo();
   
+});  
+  </script>  
   
   </body>
 </html>

@@ -121,22 +121,28 @@ function CosmeticsAPI() {
     {
         var deleteURL = "/api/products/" + productId;
         return doAsyncDelete(deleteURL);
-    }
+    };
 
     this.updateProduct = function (productData)
     {
         var putUrl = "/api/products/"+productData.id;
         return doAsyncPut(putUrl, productData);
-    }
+    };
 
     this.getUserByEmail = function (email) {
         var apiURL = "/api/users/email/" + email + "/";
         return doAsyncGet(apiURL);
-    }
+    };
 
    this.addNewUser = function (user) {
         var postURL = "/api/users";
         return doAsyncPost(postURL, user);
     };
+
+    this.getUserById = function (id) {
+        var apiURL = "/api/users/" + id;
+        return doAsyncGet(apiURL);
+    };
+
     CosmeticsAPI.instance = this;
 }

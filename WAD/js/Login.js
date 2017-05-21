@@ -11,8 +11,8 @@ function VerifyUser(){
             if(data.length > 0){
                 if(data[0].Password == pass)
                 {
-                    $.cookie("User", data[0].UserId);
-                    alert($.cookie("User"));
+                    localStorage.setItem("User", data[0].UserId);
+                    alert(localStorage.getItem("User"));
                     window.location.href="Index.html";
                 }
                 else{
@@ -45,10 +45,11 @@ function Register(){
         PhoneNumber : $("#number").val() ,
         Address : $("#address").val() , 
         Role : "user"
-    };
+    }
 
-    cosmeticsAPI.addNewUser(user);
-
-    window.location.replace("Index.html");
+    cosmeticsAPI.addNewUser(user).done(
+        window.location.href="Index.html"
+    );
+   
 
 }
