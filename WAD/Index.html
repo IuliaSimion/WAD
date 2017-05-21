@@ -83,6 +83,12 @@
         </div>
       </div>
     </div>
+    <div class="col-sm-10" id="add-btn">
+      <button class="btn btn-primary add-prod" data-toggle="modal" data-target="#myModalHorizontal">
+    <span class="glyphicon glyphicon-plus"></span> Add product
+      </button>
+     <!-- <button type="button" class="btn btn-default add-prod"><span class="glyphicon glyphicon-plus"></span> Add product</button>-->
+    </div> 
     <div class="col-sm-10" id="prod-box">
       <!--
       <div class="col-md-2 column productbox">
@@ -131,6 +137,111 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  Add product
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputName">Name</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="inputName" placeholder="Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="inputCategory">Category</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control"
+                            id="inputCategory" placeholder="Category"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputBrand">Brand</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="inputBrand" placeholder="Brand"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputDescription">Description</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="inputDescription" placeholder="Description"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputPrice">Price</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="inputPrice" placeholder="Price"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputImage">Image</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="inputImage" placeholder="Image"/>
+                    </div>
+                  </div>                
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputSale">SaleId</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="inputSale" placeholder="SaleId"/>
+                    </div>
+                  </div>
+                  
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close-prod-btn"
+                        data-dismiss="modal" >
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary save-prod-btn" style="background-color: hotpink; border-color: hotpink" onclick="AddProduct()">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <script>
 $(document).ready(function() {
   loadCategories();

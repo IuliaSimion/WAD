@@ -11,7 +11,9 @@ function VerifyUser(){
             if(data.length > 0){
                 if(data[0].Password == pass)
                 {
-                    $.cookie("User", data[0].UserId, { expires : 10 });
+                    $.cookie("User", data[0].UserId);
+                    alert($.cookie("User"));
+                    window.location.href="Index.html";
                 }
                 else{
                     alert("Incorrect password!");
@@ -20,10 +22,15 @@ function VerifyUser(){
             else{
                 alert("User does not exist!");
             }
-
+            
         }
+        
     );
-    window.location.replace("Index.html");
+    //.fail(function (response)
+    //{
+        //alert("Failed");
+    //});
+    //window.location.href="Index.html";
     
 }
 

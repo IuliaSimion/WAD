@@ -130,7 +130,7 @@ function CosmeticsAPI() {
     }
 
     this.getUserByEmail = function (email) {
-        var apiURL = "api/users/email/" + email + "/";
+        var apiURL = "/api/users/email/" + email + "/";
         return doAsyncGet(apiURL);
     }
 

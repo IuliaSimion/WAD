@@ -39,8 +39,7 @@ namespace MagazinCosmetice.Controllers
 
         // GET: api/Users/Email/{email}
         [HttpGet]
-        [Route("api/Users/Email/{email}")]
-        [ResponseType(typeof(User))]
+        [Route("api/Users/Email/{email}")]        
         public IQueryable<User> GetUserByEmail(string email)
         {
             return db.Users.Where(t => t.Email == email);

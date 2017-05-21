@@ -152,3 +152,34 @@
     background-color: hotpink;
     border-color: deeppink;
 }
+
+.add-prod{
+    background-color: lightpink;
+    border-color: pink; 
+}
+
+.add-prod:hover{
+    background-color: bisque;
+    border-color: pink; 
+}
+
+.edit-prod{
+    margin-right: 5px;
+    background-color: lightpink;
+    border-color: pink; 
+}
+
+.edit-prod:hover{
+    background-color: bisque;
+    border-color: pink; 
+}
+
+.delete-prod{
+    background-color: lightpink;
+    border-color: pink; 
+}
+
+.delete-prod:hover{
+    background-color: bisque;
+    border-color: pink; 
+}
