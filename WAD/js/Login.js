@@ -26,11 +26,6 @@ function VerifyUser(){
         }
         
     );
-    //.fail(function (response)
-    //{
-        //alert("Failed");
-    //});
-    //window.location.href="Index.html";
     
 }
 
@@ -48,7 +43,9 @@ function Register(){
     }
 
     cosmeticsAPI.addNewUser(user).done(
-        window.location.href="Index.html"
+        function (data){
+            window.location.href="Index.html";
+        }
     );
    
 

@@ -463,7 +463,9 @@ function AddProduct(){
     }
 
     cosmeticsAPI.addNewProduct(product).done(
-    window.location.href = "Index.html"
+        function (data){
+            window.location.href = "Index.html";
+        }
     );
 }
 
@@ -475,7 +477,8 @@ function DeleteProduct(){
     var prodId = localStorage.getItem("ProductId");
 
     cosmeticsAPI.deleteProduct(prodId).done(
-
-    window.location.href = "Index.html"
+        function (data){
+            window.location.href = "Index.html";
+        }
     );
 }

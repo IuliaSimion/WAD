@@ -11,14 +11,10 @@ function CosmeticsAPI() {
     }
 
     var baseURL = "localhost";
-    var doAsyncGet = function (partialUrl) {
-        var authorityToken = $.cookie("cosmetics_token");
+    var doAsyncGet = function (partialUrl) {        
         var fullUrl = baseURL + partialUrl;
         return $.ajax({
             url: fullUrl,
-            headers: {
-                "Authority": authorityToken                
-            },
             dataType: "json"
         });
     };
