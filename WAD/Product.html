@@ -99,6 +99,108 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myEditModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  Edit product
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editName">Name</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editName" placeholder="Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="editCategory">Category</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control"
+                            id="editCategory" placeholder="Category"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editBrand">Brand</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editBrand" placeholder="Brand"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editDescription">Description</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editDescription" placeholder="Description"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editPrice">Price</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editPrice" placeholder="Price"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editImage">Image</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editImage" placeholder="Image"/>
+                    </div>
+                  </div>                
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editSale">SaleId</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" 
+                        id="editSale" placeholder="SaleId"/>
+                    </div>
+                  </div>
+                  
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close-prod-btn"
+                        data-dismiss="modal" >
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary save-prod-btn" style="background-color: hotpink; border-color: hotpink" onclick="EditProduct()">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
   
 <script>  
 $(document).ready(function() {
@@ -106,6 +208,7 @@ $(document).ready(function() {
   loadBrands();
   HideButtons();
   loadProductDetails();
+  LogoutBtn();
   
   
 });

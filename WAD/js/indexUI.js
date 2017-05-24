@@ -379,7 +379,7 @@ function loadProductDetails(){
                                     '</div>' +
 
                                     '<div class="col-sm-5">' +
-                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod" onClick="PopulateEdit()" data-toggle="modal" data-target="#myEditModal"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                         '<h2>' + data.Name + '</h2>' +
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -397,7 +397,7 @@ function loadProductDetails(){
                                     '</div>' +
 
                                     '<div class="col-sm-5">' +
-                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod" onClick="PopulateEdit()" data-toggle="modal" data-target="#myEditModal"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                         '<h2>' + data.Name + '</h2>' +
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -417,7 +417,7 @@ function loadProductDetails(){
                                         '</div>' +
 
                                         '<div class="col-sm-5">' +
-                                            '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                            '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod" onClick="PopulateEdit()" data-toggle="modal" data-target="#myEditModal"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()"><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                             '<h2>' + data.Name + '</h2>' +
                                             '<h4>Category: ' + data.Category + '</h4>' +
                                             '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -435,7 +435,7 @@ function loadProductDetails(){
                                     '</div>' +
 
                                     '<div class="col-sm-5">' +
-                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
+                                        '<div id="edit-delete-buttons"><button class="btn btn-primary edit-prod" onClick="PopulateEdit()" data-toggle="modal" data-target="#myEditModal"><span class="glyphicon glyphicon-pencil"></span>Edit</button><button class="btn btn-primary delete-prod" onClick="DeleteProduct()><span class="glyphicon glyphicon-remove"></span>Delete</button></div>' +
                                         '<h2>' + data.Name + '</h2>' +
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
@@ -488,6 +488,49 @@ function DeleteProduct(){
     cosmeticsAPI.deleteProduct(prodId).done(
         function (data){
             window.location.href = "Index.html";
+        }
+    );
+}
+
+function PopulateEdit(){
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+
+    var prodId = localStorage.getItem("ProductId");
+
+    cosmeticsAPI.getProductById(prodId).done(
+        function (data){
+            $("#editName").val(data.Name);
+            $("#editCategory").val(data.Category);
+            $("#editBrand").val(data.Brand);
+            $("#editDescription").val(data.Description);
+            $("#editPrice").val(data.Price);
+            $("#editImage").val(data.Image);
+            $("#editSale").val(data.SaleId);
+        }
+    );
+
+}
+
+function EditProduct(){
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+
+    var product = {
+        ProductId: localStorage.getItem("ProductId"),
+        Name: $("#editName").val(),
+        Category: $("#editCategory").val(),
+        Brand: $("#editBrand").val(),
+        Description: $("#editDescription").val(),
+        Price: $("#editPrice").val(),
+        Image: $("#editImage").val(),
+        SaleId: $("#editSale").val(),
+        NewPrice: null
+    }
+    var prodId = localStorage.getItem("ProductId");
+    cosmeticsAPI.updateProduct(prodId, product).done(
+        function (data) {
+            window.location.href = "Product.html";
         }
     );
 }

@@ -119,9 +119,9 @@ function CosmeticsAPI() {
         return doAsyncDelete(deleteURL);
     };
 
-    this.updateProduct = function (productData)
+    this.updateProduct = function (id, productData)
     {
-        var putUrl = "/api/products/"+productData.id;
+        var putUrl = "/api/products/"+ id;
         return doAsyncPut(putUrl, productData);
     };
 

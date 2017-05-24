@@ -125,7 +125,16 @@ namespace MagazinCosmetice.Controllers
                 return BadRequest();
             }
 
-            db.Entry(product).State = EntityState.Modified;
+            //db.Entry(product).State = EntityState.Modified;
+            Product p = db.Products.Find(product.ProductId);
+            //p.ProductId = product.ProductId;
+            p.Name = product.Name;
+            p.Category = product.Category;
+            p.Brand = product.Brand;
+            p.Description = product.Description;
+            p.Image = product.Image;
+            p.Price = product.Price;
+            p.SaleId = product.SaleId;
 
             try
             {
