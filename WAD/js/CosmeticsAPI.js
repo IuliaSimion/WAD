@@ -140,5 +140,20 @@ function CosmeticsAPI() {
         return doAsyncGet(apiURL);
     };
 
+    this.getCartItems = function(){
+        var apiURL = "/api/carts";
+        return doAsyncGet(apiURL);
+    }
+
+    this.addCartItem = function (item){
+        var apiURL = "/api/carts";
+        return doAsyncPost(apiURL, item);
+    }
+
+    this.deleteCartItem = function (id){
+        apiURL = "/api/carts/" + id;
+        return doAsyncDelete(apiURL);
+    }
+
     CosmeticsAPI.instance = this;
 }

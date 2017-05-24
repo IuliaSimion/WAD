@@ -384,7 +384,8 @@ function loadProductDetails(){
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
                                         '<h5>Description: ' + data.Description + '</h5>' +
-                                        '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.Price + ' RON</div></div>' +
+                                        '<h5>Quantity: </h5><input type="number" name="quantity" min="1" max="10" id="quantity">' +
+                                        '<div class="productprice"><div class="pull-right"><button class="btn btn-danger btn-sm" onClick="AddToCart()">Add to cart</button></div><div class="pricetext">' + data.Price + ' RON</div></div>' +
 
                                     '</div>' +
 
@@ -402,7 +403,8 @@ function loadProductDetails(){
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
                                         '<h5>Description: ' + data.Description + '</h5>' +
-                                        '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.NewPrice + ' RON</div></div>' +
+                                        '<h5>Quantity: </h5><input type="number" name="quantity" min="1" max="10" id="quantity">' +
+                                        '<div class="productprice"><div class="pull-right"><button class="btn btn-danger btn-sm" onClick="AddToCart()">Add to cart</button></div><div class="pricetext">' + data.NewPrice + ' RON</div></div>' +
 
                                     '</div>' +
 
@@ -422,7 +424,8 @@ function loadProductDetails(){
                                             '<h4>Category: ' + data.Category + '</h4>' +
                                             '<h4>Brand: ' + data.Brand + '</h4>' +
                                             '<h5>Description: ' + data.Description + '</h5>' +
-                                            '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.Price + ' RON</div></div>' +
+                                            '<h5>Quantity: </h5><input type="number" name="quantity" min="1" max="10" id="quantity">' +
+                                            '<div class="productprice"><div class="pull-right"><button class="btn btn-danger btn-sm" onClick="AddToCart()">Add to cart</button></div><div class="pricetext">' + data.Price + ' RON</div></div>' +
 
                                         '</div>' +
 
@@ -440,7 +443,8 @@ function loadProductDetails(){
                                         '<h4>Category: ' + data.Category + '</h4>' +
                                         '<h4>Brand: ' + data.Brand + '</h4>' +
                                         '<h5>Description: ' + data.Description + '</h5>' +
-                                        '<div class="productprice"><div class="pull-right"><a href="#" class="btn btn-danger btn-sm" role="button">Add to cart</a></div><div class="pricetext">' + data.NewPrice + ' RON</div></div>' +
+                                        '<h5>Quantity: </h5><input type="number" name="quantity" min="1" max="10" id="quantity">' +
+                                        '<div class="productprice"><div class="pull-right"><button class="btn btn-danger btn-sm" onClick="AddToCart()">Add to cart</button></div><div class="pricetext">' + data.NewPrice + ' RON</div></div>' +
 
                                     '</div>' +
 
