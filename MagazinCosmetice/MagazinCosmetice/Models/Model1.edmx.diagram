@@ -4,13 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab1dc166515446c8ba00b9a00b637b88" Name="Diagram1">
-        <EntityTypeShape EntityType="MagazinCosmeticeModel.Order" Width="1.5" PointX="3" PointY="1.25" />
-        <EntityTypeShape EntityType="MagazinCosmeticeModel.Product" Width="1.5" PointX="3" PointY="5" />
-        <EntityTypeShape EntityType="MagazinCosmeticeModel.Sale" Width="1.5" PointX="0.75" PointY="5.625" />
-        <EntityTypeShape EntityType="MagazinCosmeticeModel.User" Width="1.5" PointX="0.75" PointY="1" />
-        <AssociationConnector Association="MagazinCosmeticeModel.FK_Order_User" />
-        <AssociationConnector Association="MagazinCosmeticeModel.FK_Product_Sale" />
+      <Diagram DiagramId="5330a902d40f4402b3dc3dd20484294a" Name="Diagram1">
+        <EntityTypeShape EntityType="MagazinCosmeticeModel.Cart" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazinCosmeticeModel.Order" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazinCosmeticeModel.Product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazinCosmeticeModel.Sale" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazinCosmeticeModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="MagazinCosmeticeModel.FK_Cart_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazinCosmeticeModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazinCosmeticeModel.FK_Product_Sale" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

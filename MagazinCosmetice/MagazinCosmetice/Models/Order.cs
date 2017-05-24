@@ -14,11 +14,18 @@ namespace MagazinCosmetice.Models
     
     public partial class Order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Order()
+        {
+            this.Carts = new HashSet<Cart>();
+        }
+    
         public int OrderId { get; set; }
         public int UserId { get; set; }
-        public string ProductList { get; set; }
         public System.DateTime Date { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
         public virtual User User { get; set; }
     }
 }

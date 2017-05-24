@@ -50,15 +50,23 @@ function HideButtons(){
     cosmeticsAPI.setBaseURL("http://localhost:55427");
 
     var userId = localStorage.getItem("User");
-    cosmeticsAPI.getUserById(userId).done(
-        function (data){
-            if(data.Role == "user"){
-                    $("#add-btn").hide();
-                    $("#edit-delete-buttons").hide();
+    if(userId == null){
+        $("#MyProfile").hide();
+        $("#add-btn").hide();
+        $("#edit-delete-buttons").hide();
+    }
+    else{
+        cosmeticsAPI.getUserById(userId).done(
+            function (data){
+                if(data.Role == "user"){
+                        $("#add-btn").hide();
+                        $("#edit-delete-buttons").hide();
+                }
             }
-        }
 
-    );
+        );
+    }
+
 }
 
 
@@ -349,10 +357,11 @@ function SaveProductId(data){
 
 
 function loadProductDetails(){
-    $("#prod-box").empty();
+    //$("#prod-box").empty();
     //var prodId = $.cookie("ProductId").val();
     //var prodId = document.cookie;
     HideButtons();
+
     var prodId = localStorage.getItem("ProductId");
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
@@ -481,4 +490,24 @@ function DeleteProduct(){
             window.location.href = "Index.html";
         }
     );
+}
+
+
+function LogoutBtn(){
+    var user = localStorage.getItem("User");
+    if(user != null){
+        $("#login-btn").empty();
+        var login = $("#login-btn");
+        htmlString = "";
+        
+        htmlString = '<a onClick="Logout()"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Logout </span></a>';
+
+        login.append(htmlString);
+
+    }
+}
+
+function Logout(){
+    localStorage.removeItem("User");
+    window.location.href = "Index.html";
 }

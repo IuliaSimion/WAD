@@ -16,7 +16,7 @@
       <div class="row top">
         <div class="col-sm-12">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="Login.html"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Login </span></a></li>
+            <li id="login-btn"><a href="Login.html"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Login </span></a></li>
             <li><a href="Cart.html"><span class="badge">0</span><span class="glyphicon glyphicon-shopping-cart cart"></span><span class="cart-text"> Cart </span></a></li>
           </ul>        
         </div> 
@@ -248,6 +248,7 @@ $(document).ready(function() {
   loadCategories();
   loadBrands();
   loadProducts();
+  LogoutBtn();
   
 });  
   </script>
