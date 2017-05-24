@@ -37,6 +37,25 @@ namespace MagazinCosmetice.Controllers
             return Ok(order);
         }
 
+        //PUT: api/Orders/CalculateTotal
+        [HttpPut]
+        [Route("api/Orders/CalculateTotal")]
+        public IEnumerable<Order> CalculateTotal()
+        {
+            IEnumerable<Order> orderList = db.Orders;
+            foreach(var order in orderList)
+            {
+                order.TotalPrice = 0;
+                foreach(var cartItem in order.Carts)
+                {
+                    order.TotalPrice += cartItem.Price;
+                }
+                db.SaveChanges();
+            }
+
+            return orderList;
+        }
+
         // PUT: api/Orders/5
         [HttpPut]
         [ResponseType(typeof(void))]

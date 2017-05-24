@@ -13,8 +13,8 @@ function loadCart(){
                                 '<td>'+ data[i].Price +'</td>' +
                                 '<td><span class="glyphicon glyphicon-remove"></span></td>' +
                             '</tr>'
-                cartItem.append(htmlString);
             }
+            cartItem.append(htmlString);
         }
     );
 }
