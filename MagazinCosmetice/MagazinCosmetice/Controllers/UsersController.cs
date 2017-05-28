@@ -61,7 +61,13 @@ namespace MagazinCosmetice.Controllers
                 return BadRequest();
             }
 
-            db.Entry(user).State = EntityState.Modified;
+            User u = db.Users.Find(user.UserId);
+            u.Name = user.Name;
+            u.Email = user.Email;
+            u.Address = user.Address;
+            u.PhoneNumber = user.PhoneNumber;
+            
+            //db.Entry(user).State = EntityState.Modified;
 
             try
             {

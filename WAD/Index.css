@@ -65,6 +65,13 @@
     margin-right: 5px;
 }
 
+.about{
+    position: center;
+    margin-top: 15px;
+    margin-right: 50px;
+    
+}
+
 .info{
     position: center;
     margin-top: 15px;
@@ -180,6 +187,17 @@
 }
 
 .delete-prod:hover{
+    background-color: bisque;
+    border-color: pink; 
+}
+
+.edit-user{
+    margin-right: 5px;
+    background-color: lightpink;
+    border-color: pink; 
+}
+
+.edit-user:hover{
     background-color: bisque;
     border-color: pink; 
 }

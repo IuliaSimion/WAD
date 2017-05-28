@@ -11,7 +11,7 @@ function loadCart(){
                                 '<td>'+ data[i].Name +'</td>' +
                                 '<td>'+ data[i].Quantity +'</td>' +
                                 '<td>'+ data[i].Price +'</td>' +
-                                '<td><span class="glyphicon glyphicon-remove"></span></td>' +
+                                '<td><span class="glyphicon glyphicon-remove" onClick="DeleteCartItem('+ data[i].ItemId +')"></span></td>' +
                             '</tr>'
             }
             cartItem.append(htmlString);
@@ -42,4 +42,28 @@ function AddToCart(){
         }
     ); 
         
+}
+
+function DeleteCartItem(id){
+    var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+
+    cosmeticsAPI.deleteCartItem(id).done(
+        function (data){
+            window.location.href = "Cart.html";
+        }
+    );
+}
+
+function DeleteCart(){
+     var cosmeticsAPI = new CosmeticsAPI();
+    cosmeticsAPI.setBaseURL("http://localhost:55427");
+
+    cosmeticsAPI.deleteAllCart().done(
+        function (data){
+            window.location.href = "Cart.html";
+        }
+            
+    );
+
 }

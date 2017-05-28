@@ -17,7 +17,7 @@
       <div class="row top">
         <div class="col-sm-12">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="Login.html"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Login </span></a></li>
+            <li id="login-btn"><a href="Login.html"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Login </span></a></li>
             <li><a href="Cart.html"><span class="badge">0</span><span class="glyphicon glyphicon-shopping-cart cart"></span><span class="cart-text"> Cart </span></a></li>
           </ul>        
         </div> 
@@ -51,10 +51,89 @@
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="EditUser" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  Edit user info
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editUserName">Name</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editUserName" placeholder="Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="editEmail">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control"
+                            id="editEmail" placeholder="Email"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editAddress">Address</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" 
+                        id="editAddress" placeholder="Address"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="editPhone">Phone number</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" 
+                        id="editPhone" placeholder="Phone number"/>
+                    </div>
+                  </div>
+                  
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close-user-btn"
+                        data-dismiss="modal" >
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary save-user-btn" style="background-color: hotpink; border-color: hotpink" onclick="EditUser()">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+  
   
 <script>
 $(document).ready(function() {
 UserInfo();
+LogoutBtn();
   
 });  
   </script>  

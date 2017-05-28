@@ -17,7 +17,7 @@
       <div class="row top">
         <div class="col-sm-12">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="Login.html"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Login </span></a></li>
+            <li id="login-btn"><a href="Login.html"><span class="glyphicon glyphicon-user login"></span><span class="login-text"> Login </span></a></li>
             <li><a href="Cart.html"><span class="badge">0</span><span class="glyphicon glyphicon-shopping-cart cart"></span><span class="cart-text"> Cart </span></a></li>
           </ul>        
         </div> 
@@ -82,7 +82,8 @@
       <div class="pull-right">
         <h5>Shipping fee: 15 RON</h5> 
         <h3>Total: 0.00 RON</h3>
-        <button type="button" class="btn btn-default checkout" data-toggle="modal" data-target="#myModal">Checkout</button>
+        <!--onclick="DeleteCart()"-->
+        <button type="button" class="btn btn-default checkout" data-toggle="modal" data-target="#myModal" onclick="DeleteCart()">Checkout</button>
         <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
     
@@ -109,6 +110,8 @@
 <script>  
 $(document).ready(function() {
   loadCart();
+  HideButtons();
+  LogoutBtn();
   
 });
 </script>

@@ -97,7 +97,7 @@ function loadProductsByCategory(category){
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
     //var category = $('#categ-link' + this.id).text();
-    HideButtons();
+    //HideButtons();
     cosmeticsAPI.getProductsByCategory(category).done(
         function (data) {
             
@@ -179,7 +179,7 @@ function loadProductsByBrand(brand){
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
     //var brand = $(this).text();
-    HideButtons();
+    //HideButtons();
     cosmeticsAPI.getProductsByBrand(brand).done(
         function (data) {
             
@@ -236,7 +236,7 @@ function loadProducts()
 {
     var cosmeticsAPI = new CosmeticsAPI();
     cosmeticsAPI.setBaseURL("http://localhost:55427");
-    HideButtons();
+    //HideButtons();
 
     cosmeticsAPI.getAllProducts().done(
         function (data){

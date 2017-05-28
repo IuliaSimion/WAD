@@ -140,6 +140,12 @@ function CosmeticsAPI() {
         return doAsyncGet(apiURL);
     };
 
+    this.updateUser  = function (id, userData)
+    {
+        var putUrl = "/api/users/"+ id;
+        return doAsyncPut(putUrl, userData);
+    };
+
     this.getCartItems = function(){
         var apiURL = "/api/carts";
         return doAsyncGet(apiURL);
@@ -152,6 +158,11 @@ function CosmeticsAPI() {
 
     this.deleteCartItem = function (id){
         apiURL = "/api/carts/" + id;
+        return doAsyncDelete(apiURL);
+    }
+
+    this.deleteAllCart = function (){
+        apiURL = "/api/Carts/DeleteAll";
         return doAsyncDelete(apiURL);
     }
 

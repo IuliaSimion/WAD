@@ -100,6 +100,19 @@ namespace MagazinCosmetice.Controllers
             return CreatedAtRoute("DefaultApi", new { id = cart.ItemId }, cart);
         }
 
+        // DELETE: api/Carts/DeleteAll
+        [Route("api/Carts/DeleteAll")]
+        public IHttpActionResult DeleteAllCartItems()
+        {
+            IEnumerable<Cart> cartList = db.Carts.ToList();
+            foreach(var item in cartList)
+            {
+                db.Carts.Remove(item);
+            }
+            db.SaveChanges();
+            return Ok();
+        }
+
         // DELETE: api/Carts/5
         [ResponseType(typeof(Cart))]
         public IHttpActionResult DeleteCart(int id)
